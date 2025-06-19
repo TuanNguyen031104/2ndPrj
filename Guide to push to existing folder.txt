@@ -1,0 +1,8 @@
+1: git init
+2: git status
+3: git add -A
+4: git status
+5: git commit -m "abc"
+6: git remote -v
+7: git branch
+8: git push -u origin main (or your branch name)
