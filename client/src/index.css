@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgb(43, 43, 43);
+}
+
+.ant-form-item {
+    margin-bottom: 10px;
+}
+
+h1, span {
+    color: rgb(60, 69, 69);
+}
+
+/* Đảm bảo chiều rộng của thẻ Col để ảnh có chỗ */
+.ant-col-6 {
+    /* Ví dụ cho một bố cục 4 cột với gutter, bạn có thể điều chỉnh */
+    width: 25%; /* 100% / 4 */
+    padding: 10px; /* tương ứng với gutter của Ant Design */
+    box-sizing: border-box; /* Quan trọng để padding không làm tăng chiều rộng ngoài ý muốn */
+}
+
+.movie-card {
+    /* Đảm bảo thẻ cha của ảnh có kích thước */
+    /* Bạn có thể đặt chiều cao cố định cho card hoặc cho poster-container */
+    height: 380px; /* Ví dụ: chiều cao cố định cho card tổng thể */
+    display: flex;
+    flex-direction: column;
+    /* ... các style khác của card ... */
+}
+
+.poster-container {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của thẻ cha (movie-card) */
+    height: 300px; /* Chiều cao cố định cho vùng hiển thị poster */
+    overflow: hidden; /* Cắt bỏ phần thừa nếu ảnh lớn hơn */
+    display: flex; /* Dùng flexbox để căn giữa ảnh */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Màu nền khi không có poster hoặc lỗi */
+}
+
+.poster-container img {
+    width: 100%; /* Ảnh chiếm 100% chiều rộng của vùng chứa */
+    height: 100%; /* Ảnh chiếm 100% chiều cao của vùng chứa */
+    object-fit: cover; /* Hoặc 'contain' tùy ý bạn muốn */
+    /*
+     * object-fit: cover; -> Ảnh sẽ lấp đầy vùng chứa, cắt bỏ phần thừa (phù hợp cho gallery)
+     * object-fit: contain; -> Ảnh sẽ nằm gọn trong vùng chứa, hiển thị toàn bộ (có thể có khoảng trắng)
+     * object-fit: fill; -> Mặc định, kéo giãn/nén ảnh để lấp đầy (gây méo hình)
+     * object-fit: scale-down; -> Giống 'contain' nhưng chỉ thu nhỏ chứ không phóng to
+     * object-fit: none; -> Không thay đổi kích thước ảnh
+     */
+}
